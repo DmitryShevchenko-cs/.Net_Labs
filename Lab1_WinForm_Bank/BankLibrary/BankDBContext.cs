@@ -2,7 +2,7 @@
 
 namespace BankLibrary;
 
-public class BankBDContext : DbContext
+public class BankDBContext : DbContext
 {
         
     public DbSet<BankCard> BankCards { get; set; }
@@ -22,6 +22,10 @@ public class BankBDContext : DbContext
         modelBuilder.Entity<User>()
             .HasMany(t => t.TransactionHistory)
             .WithOne(u => u.User);
+        
+        modelBuilder.Entity<BankCard>()
+            .Property(b => b.Balance)
+            .HasColumnType("decimal(18, 2)");
         
         base.OnModelCreating(modelBuilder);
     }

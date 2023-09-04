@@ -7,4 +7,6 @@ public class TransactionHistory
     public User User { get; set; }
     
     public string? Action { get; set; }
+
+    public DateTime DateTime { get; set; }
 }
