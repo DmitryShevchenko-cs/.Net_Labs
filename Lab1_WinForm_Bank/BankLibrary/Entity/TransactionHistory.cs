@@ -3,8 +3,8 @@
 public class TransactionHistory
 {
     public int Id { get; set; }
-    public int UserId { get; set; }
-    public User User { get; set; }
+    public int BankCardId { get; set; }
+    public BankCard? BankCard { get; set; }
     
     public string? Action { get; set; }
 

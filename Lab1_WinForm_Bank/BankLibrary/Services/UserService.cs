@@ -9,20 +9,20 @@ public class UserService : IUserService
     private readonly BankDBContext _context = new BankDBContext();
     public async Task CreateUser(User user)
     {
-       var userDb = await _context.Users.AsQueryable()
+       var userDb = await _context.Users
             .Where(i=>i.PhoneNumber == user.PhoneNumber || i.Email == user.Email).FirstOrDefaultAsync();
         if(userDb != null)
             return;
         
-        user.Password = "11";
+        user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password, BCrypt.Net.BCrypt.GenerateSalt());
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
         
     }
-
+    
     public async Task AddBankCard(int userId, string pinCode)
     {
-        var userDb = await _context.Users.AsQueryable()
+        var userDb = await _context.Users
             .Where(i => i.Id == userId).FirstOrDefaultAsync();
         if (userDb != null)
         {
@@ -39,7 +39,7 @@ public class UserService : IUserService
             await _context.BankCards.AddAsync(bankCard);
             await _context.SaveChangesAsync();
             
-            bankCard = await _context.BankCards.AsQueryable().Where(i => i.UserId == userId).FirstOrDefaultAsync();
+            bankCard = await _context.BankCards.Where(i => i.UserId == userId).FirstOrDefaultAsync();
             if (bankCard != null)
             {
                 userDb.BankCard = bankCard;
@@ -51,19 +51,29 @@ public class UserService : IUserService
 
     public async Task<User?> GetByBankCardNumber(string cardNumber)
     {
-        return await _context.Users.Include(i => i.BankCard).AsQueryable()
+        return await _context.Users.Include(i => i.BankCard)
             .Where(i => i.BankCard.CardNumber == cardNumber).FirstOrDefaultAsync();
     }
 
     public async Task<BankCard?> GetBankCardByUserId(int userId)
     {
-        return await _context.BankCards.Include(i => i.User).AsQueryable()
+        return await _context.BankCards.Include(i => i.User)
             .Where(i => i.User.Id == userId).FirstOrDefaultAsync();
+    }
+
+    public async Task<User?> SignIn(string phoneNumber, string password)
+    {
+        var userDb = await _context.Users.Include(i => i.BankCard)
+            .Where(i => i.PhoneNumber == phoneNumber).FirstOrDefaultAsync();
+        if(userDb is not null)
+            if (BCrypt.Net.BCrypt.Verify(password, userDb!.Password))
+                return userDb;
+        return null;
     }
 
     public async Task<User?> GetByIdAsync(int id)
     {
-        return await _context.Users.Include(i => i.BankCard).AsQueryable()
+        return await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == id).FirstOrDefaultAsync();
     }
 }

@@ -68,3 +68,4 @@ C:\Users\Dmitry\Documents\.Net_Labs\Lab1_WinForm_Bank\BankConsole\bin\Debug\net7
 C:\Users\Dmitry\Documents\.Net_Labs\Lab1_WinForm_Bank\BankConsole\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Dmitry\Documents\.Net_Labs\Lab1_WinForm_Bank\BankConsole\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Dmitry\Documents\.Net_Labs\Lab1_WinForm_Bank\BankConsole\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab1_WinForm_Bank\BankConsole\bin\Debug\net7.0\BCrypt.Net-Next.dll

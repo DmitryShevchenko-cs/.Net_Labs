@@ -11,5 +11,5 @@ public class User
     public string Email { get; set; }
     
     public BankCard BankCard { get; set; }
-    public List<TransactionHistory> TransactionHistory { get; set; }
+   
 }

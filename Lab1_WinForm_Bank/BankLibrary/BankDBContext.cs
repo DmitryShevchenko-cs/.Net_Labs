@@ -19,9 +19,10 @@ public class BankDBContext : DbContext
             .WithOne(bc => bc.User)
             .HasForeignKey<BankCard>(bc => bc.UserId);
     
-        modelBuilder.Entity<User>()
+        modelBuilder.Entity<BankCard>()
             .HasMany(t => t.TransactionHistory)
-            .WithOne(u => u.User);
+            .WithOne(u => u.BankCard)
+            .HasForeignKey(u => u.BankCardId);
         
         modelBuilder.Entity<BankCard>()
             .Property(b => b.Balance)

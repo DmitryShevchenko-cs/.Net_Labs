@@ -11,4 +11,5 @@ public class BankCard
     
     public int UserId { get; set; }
     public User User { get; set; }
+    public List<TransactionHistory> TransactionHistory { get; set; }
 }
