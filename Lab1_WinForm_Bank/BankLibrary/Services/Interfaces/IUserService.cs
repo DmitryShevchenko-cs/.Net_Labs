@@ -7,7 +7,5 @@ public interface IUserService : IBaseService<User>
     public Task<User?> GetByBankCardNumber(string cardNumber);
 
     public Task<BankCard?> GetBankCardByUserId(int userId);
-    
-    public Task<User?> SignIn(string phoneNumber, string password);
-    
+
 }

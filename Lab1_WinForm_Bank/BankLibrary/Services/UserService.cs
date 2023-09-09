@@ -10,11 +10,10 @@ public class UserService : IUserService
     public async Task CreateUser(User user)
     {
        var userDb = await _context.Users
-            .Where(i=>i.PhoneNumber == user.PhoneNumber || i.Email == user.Email).FirstOrDefaultAsync();
+            .Where(i => i.Email == user.Email).FirstOrDefaultAsync();
         if(userDb != null)
             return;
         
-        user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password, BCrypt.Net.BCrypt.GenerateSalt());
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
         
@@ -60,17 +59,7 @@ public class UserService : IUserService
         return await _context.BankCards.Include(i => i.User)
             .Where(i => i.User.Id == userId).FirstOrDefaultAsync();
     }
-
-    public async Task<User?> SignIn(string phoneNumber, string password)
-    {
-        var userDb = await _context.Users.Include(i => i.BankCard)
-            .Where(i => i.PhoneNumber == phoneNumber).FirstOrDefaultAsync();
-        if(userDb is not null)
-            if (BCrypt.Net.BCrypt.Verify(password, userDb!.Password))
-                return userDb;
-        return null;
-    }
-
+    
     public async Task<User?> GetByIdAsync(int id)
     {
         return await _context.Users.Include(i => i.BankCard)

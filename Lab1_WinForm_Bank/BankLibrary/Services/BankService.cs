@@ -7,9 +7,17 @@ public class BankService : IBankService
 {
     private readonly BankDBContext _context = new BankDBContext();
 
-    public Task Authorize()
+    public async Task<User?> Authorize(string cardNumber, string cvv, DateTime expiryDate, string pinCode)
     {
-        throw new NotImplementedException();
+        var userDb = await _context.Users.Include(i => i.BankCard).ThenInclude(b => b.TransactionHistory)
+            .Where(i => i.BankCard.CardNumber == cardNumber 
+                        && i.BankCard.CVV == cvv 
+                        && i.BankCard.ExpiryDate == expiryDate)
+            .FirstOrDefaultAsync();
+        if (userDb is null) return null;
+        if (BCrypt.Net.BCrypt.Verify(pinCode, userDb!.BankCard.PinCode))
+            return userDb;
+        return null;
     }
 
     public Task<decimal> CheckBalance(int userId)
