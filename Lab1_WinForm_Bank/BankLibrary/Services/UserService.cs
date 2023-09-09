@@ -7,19 +7,19 @@ namespace BankLibrary.Services;
 public class UserService : IUserService
 {
     private readonly BankDBContext _context = new BankDBContext();
-    public async Task CreateUser(User user)
+    public async Task<User?> CreateUserAsync(User user)
     {
        var userDb = await _context.Users
             .Where(i => i.Email == user.Email).FirstOrDefaultAsync();
         if(userDb != null)
-            return;
+            return null;
         
         await _context.Users.AddAsync(user);
         await _context.SaveChangesAsync();
-        
+        return userDb;
     }
     
-    public async Task AddBankCard(int userId, string pinCode)
+    public async Task AddBankCardAsync(int userId, string pinCode)
     {
         var userDb = await _context.Users
             .Where(i => i.Id == userId).FirstOrDefaultAsync();
@@ -48,18 +48,24 @@ public class UserService : IUserService
         }
     }
 
-    public async Task<User?> GetByBankCardNumber(string cardNumber)
+    public async Task<User?> GetByBankCardNumberAsync(string cardNumber)
     {
         return await _context.Users.Include(i => i.BankCard)
             .Where(i => i.BankCard.CardNumber == cardNumber).FirstOrDefaultAsync();
     }
 
-    public async Task<BankCard?> GetBankCardByUserId(int userId)
+    public async Task<BankCard?> GetBankCardByUserIdAsync(int userId)
     {
         return await _context.BankCards.Include(i => i.User)
             .Where(i => i.User.Id == userId).FirstOrDefaultAsync();
     }
-    
+
+    public async Task<User?> GetByEmail(string email)
+    {
+        return await _context.Users.Include(i => i.BankCard).ThenInclude(b => b.TransactionHistory)
+            .Where(i => i.Email == email).FirstOrDefaultAsync();
+    }
+
     public async Task<User?> GetByIdAsync(int id)
     {
         return await _context.Users.Include(i => i.BankCard)

@@ -2,10 +2,12 @@
 
 public interface IUserService : IBaseService<User>
 {
-    public Task CreateUser(User user);
-    public Task AddBankCard(int userId, string pinCode);
-    public Task<User?> GetByBankCardNumber(string cardNumber);
+    public Task<User?> CreateUserAsync(User user);
+    public Task AddBankCardAsync(int userId, string pinCode);
+    public Task<User?> GetByBankCardNumberAsync(string cardNumber);
 
-    public Task<BankCard?> GetBankCardByUserId(int userId);
+    public Task<BankCard?> GetBankCardByUserIdAsync(int userId);
+    
+    public Task<User?> GetByEmail(string email);
 
 }

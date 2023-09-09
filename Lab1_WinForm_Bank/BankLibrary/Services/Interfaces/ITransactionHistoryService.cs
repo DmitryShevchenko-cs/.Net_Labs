@@ -2,6 +2,6 @@
 
 public interface ITransactionHistoryService : IBaseService<TransactionHistory>
 {
-    public Task AddInHistory(TransactionHistory transactionHistory);
-    public Task<List<TransactionHistory>> GetHistoryByUser(int userId);
+    public Task AddInHistoryAsync(TransactionHistory transactionHistory);
+    public Task<List<TransactionHistory>> GetHistoryByUserAsync(int userId);
 }

@@ -2,11 +2,11 @@
 
 public interface IBankService
 {
-    public Task<User?> Authorize(string cardNumber, string cvv, DateTime expiryDate, string pinCode);
-    public Task<decimal> CheckBalance(int userId);
-    public Task<List<TransactionHistory>?> CheckHistory(int userId);
-    public Task GetMoney(int userId, decimal money);
-    public Task SetMoney(int userId, decimal money);
-    public Task SendMoney(int userId, int receiverId, decimal money);
-    public Task CheckBoxes();
+    public Task<User?> AuthorizeAsync(string cardNumber, string cvv, DateTime expiryDate, string pinCode);
+    public Task<decimal> CheckBalanceAsync(int userId);
+    public Task<List<TransactionHistory>?> CheckHistoryAsync(int userId);
+    public Task GetMoneyAsync(int userId, decimal money);
+    public Task SetMoneyAsync(int userId, decimal money);
+    public Task SendMoneyAsync(int userId, int receiverId, decimal money);
+    public Task CheckBoxesAsync();
 }

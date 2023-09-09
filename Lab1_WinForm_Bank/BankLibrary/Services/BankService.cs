@@ -7,33 +7,32 @@ public class BankService : IBankService
 {
     private readonly BankDBContext _context = new BankDBContext();
 
-    public async Task<User?> Authorize(string cardNumber, string cvv, DateTime expiryDate, string pinCode)
+    public async Task<User?> AuthorizeAsync(string cardNumber, string cvv, DateTime expiryDate, string pinCode)
     {
         var userDb = await _context.Users.Include(i => i.BankCard).ThenInclude(b => b.TransactionHistory)
             .Where(i => i.BankCard.CardNumber == cardNumber 
                         && i.BankCard.CVV == cvv 
-                        && i.BankCard.ExpiryDate == expiryDate)
+                        && i.BankCard.ExpiryDate.Month == expiryDate.Month
+                        && i.BankCard.ExpiryDate.Year == expiryDate.Year)
             .FirstOrDefaultAsync();
         if (userDb is null) return null;
-        if (BCrypt.Net.BCrypt.Verify(pinCode, userDb!.BankCard.PinCode))
-            return userDb;
-        return null;
+        return userDb;
     }
 
-    public Task<decimal> CheckBalance(int userId)
+    public Task<decimal> CheckBalanceAsync(int userId)
     {
         return _context.BankCards.Include(i => i.User).Where(i => i.User.Id == userId)
             .Select(i => i.Balance).FirstOrDefaultAsync();
     }
     
-    public async Task<List<TransactionHistory>?> CheckHistory(int userId)
+    public async Task<List<TransactionHistory>?> CheckHistoryAsync(int userId)
     {
         return await _context.BankCards.Include(i => i.TransactionHistory)
             .Where(i => i.UserId == userId)
             .Select(i => i.TransactionHistory).FirstOrDefaultAsync();
     }
 
-    public async Task GetMoney(int userId, decimal money)
+    public async Task GetMoneyAsync(int userId, decimal money)
     {
        var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
@@ -48,7 +47,7 @@ public class BankService : IBankService
        }
     }
 
-    public async Task SetMoney(int userId, decimal money)
+    public async Task SetMoneyAsync(int userId, decimal money)
     {
         var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
@@ -61,7 +60,7 @@ public class BankService : IBankService
         }
     }
 
-    public async Task SendMoney(int userId, int receiverId, decimal money)
+    public async Task SendMoneyAsync(int userId, int receiverId, decimal money)
     {
         var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
@@ -82,7 +81,7 @@ public class BankService : IBankService
         }
     }
 
-    public Task CheckBoxes()
+    public Task CheckBoxesAsync()
     {
         throw new NotImplementedException();
     }

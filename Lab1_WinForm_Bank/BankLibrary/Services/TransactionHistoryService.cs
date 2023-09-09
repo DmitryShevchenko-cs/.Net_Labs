@@ -13,13 +13,13 @@ public class TransactionHistoryService: ITransactionHistoryService
             .Where(i => i.Id == id).FirstOrDefaultAsync();
     }
 
-    public async Task AddInHistory(TransactionHistory transactionHistory)
+    public async Task AddInHistoryAsync(TransactionHistory transactionHistory)
     {
         await _context.TransactionHistory.AddAsync(transactionHistory);
         await _context.SaveChangesAsync();
     }
 
-    public async Task<List<TransactionHistory>> GetHistoryByUser(int userId)
+    public async Task<List<TransactionHistory>> GetHistoryByUserAsync(int userId)
     {
         return await _context.TransactionHistory.Include(i => i.BankCard).ThenInclude(i => i!.User)
             .Where(i => i.BankCard.UserId == userId).ToListAsync();
