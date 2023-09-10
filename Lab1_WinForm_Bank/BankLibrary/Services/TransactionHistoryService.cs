@@ -24,4 +24,14 @@ public class TransactionHistoryService: ITransactionHistoryService
         return await _context.TransactionHistory.Include(i => i.BankCard).ThenInclude(i => i!.User)
             .Where(i => i.BankCard.UserId == userId).ToListAsync();
     }
+
+    public string ToString(List<TransactionHistory?>? transactionHistories)
+    {
+        string transactionHistoriesString = "";
+        foreach (var transactionHistory in transactionHistories!)
+        {
+            transactionHistoriesString += transactionHistory!.Action + "\n";
+        }
+        return transactionHistoriesString;
+    }
 }

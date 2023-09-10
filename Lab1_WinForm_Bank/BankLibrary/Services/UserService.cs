@@ -7,16 +7,15 @@ namespace BankLibrary.Services;
 public class UserService : IUserService
 {
     private readonly BankDBContext _context = new BankDBContext();
-    public async Task<User?> CreateUserAsync(User user)
+    public async Task CreateUserAsync(User user)
     {
        var userDb = await _context.Users
             .Where(i => i.Email == user.Email).FirstOrDefaultAsync();
-        if(userDb != null)
-            return null;
+       if (userDb != null)
+           return;
         
-        await _context.Users.AddAsync(user);
-        await _context.SaveChangesAsync();
-        return userDb;
+       await _context.Users.AddAsync(user);
+       await _context.SaveChangesAsync();
     }
     
     public async Task AddBankCardAsync(int userId, string pinCode)
@@ -33,7 +32,8 @@ public class UserService : IUserService
                 Balance = 0,
                 PinCode = pinCode,
                 UserId = userDb.Id,
-                User = userDb
+                User = userDb,
+                TransactionHistory = new List<TransactionHistory>()
             };
             await _context.BankCards.AddAsync(bankCard);
             await _context.SaveChangesAsync();
@@ -47,7 +47,6 @@ public class UserService : IUserService
             }
         }
     }
-
     public async Task<User?> GetByBankCardNumberAsync(string cardNumber)
     {
         return await _context.Users.Include(i => i.BankCard)

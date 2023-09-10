@@ -9,6 +9,7 @@ namespace BankConsole
         {
             var bankService = new BankService();
             var userService = new UserService();
+            var transactionHistoryService = new TransactionHistoryService();
 
             // await userService.CreateUserAsync(new User
             // {
@@ -67,8 +68,8 @@ namespace BankConsole
 
                             case "2":
                                 Console.Clear();
-                                //////////
-                                Console.WriteLine($"Balance: {user!.BankCard.TransactionHistory}");
+                                var history = transactionHistoryService.ToString(await bankService.CheckHistoryAsync(user!.Id, HistorySize.YEAR));
+                                Console.WriteLine($"Transaction history: \n{history}");
                                 break;
 
                             case "3":

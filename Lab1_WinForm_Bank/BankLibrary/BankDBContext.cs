@@ -27,7 +27,7 @@ public class BankDBContext : DbContext
         modelBuilder.Entity<BankCard>()
             .Property(b => b.Balance)
             .HasColumnType("decimal(18, 2)");
-        
+
         base.OnModelCreating(modelBuilder);
     }
 }
