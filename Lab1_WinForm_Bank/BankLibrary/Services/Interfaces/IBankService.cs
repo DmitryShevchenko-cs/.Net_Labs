@@ -7,6 +7,6 @@ public interface IBankService
     public Task<List<TransactionHistory>?> CheckHistoryAsync(int userId, HistorySize historySize);
     public Task GetMoneyAsync(int userId, decimal money);
     public Task SetMoneyAsync(int userId, decimal money);
-    public Task SendMoneyAsync(int userId, int receiverId, decimal money);
+    public Task SendMoneyAsync(int userId, string receiverCardNumber, decimal money);
     public Task CheckBoxesAsync();
 }

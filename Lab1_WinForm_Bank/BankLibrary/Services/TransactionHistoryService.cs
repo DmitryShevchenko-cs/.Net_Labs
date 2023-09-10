@@ -25,12 +25,12 @@ public class TransactionHistoryService: ITransactionHistoryService
             .Where(i => i.BankCard.UserId == userId).ToListAsync();
     }
 
-    public string ToString(List<TransactionHistory?>? transactionHistories)
+    public string ToString(List<TransactionHistory>? transactionHistories)
     {
         string transactionHistoriesString = "";
         foreach (var transactionHistory in transactionHistories!)
         {
-            transactionHistoriesString += transactionHistory!.Action + "\n";
+            transactionHistoriesString += $"{transactionHistory!.Action}\n";
         }
         return transactionHistoriesString;
     }
