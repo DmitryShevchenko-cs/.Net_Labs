@@ -28,7 +28,7 @@ public class BankService : IBankService
     
     public async Task<List<TransactionHistory>?> CheckHistoryAsync(int userId, HistorySize historySize)
     {
-        var query = _context.BankCards.Include(i => i.TransactionHistory)
+        var query = _context.BankCards.Include(i => i.TransactionHistory).ThenInclude(i => i.Atm)
             .Where(i => i.UserId == userId).AsQueryable();
         switch (historySize)
         {
@@ -52,11 +52,12 @@ public class BankService : IBankService
         return null;
     }
 
-    public async Task GetMoneyAsync(int userId, decimal money)
+    public async Task GetMoneyAsync(int userId, decimal money, int atmId)
     {
        var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
             .FirstOrDefaultAsync();
+       var atmDb = await _context.ATMs.Where(i => i.Id == atmId).FirstOrDefaultAsync();
        if (user is not null)
        {
            if(money > user.BankCard.Balance)
@@ -67,18 +68,20 @@ public class BankService : IBankService
                BankCardId = user.BankCard.Id,
                BankCard = user.BankCard,
                Action = $"Cash was withdrawn in the amount of {money}",
-               DateTime = DateTime.Now
+               DateTime = DateTime.Now,
+               Atm = atmDb,
            });
            _context.Users.Update(user);
            await _context.SaveChangesAsync();
        }
     }
 
-    public async Task SetMoneyAsync(int userId, decimal money)
+    public async Task SetMoneyAsync(int userId, decimal money, int atmId)
     {
         var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
             .FirstOrDefaultAsync();
+        var atmDb = await _context.ATMs.Where(i => i.Id == atmId).FirstOrDefaultAsync();
         if (user is not null)
         {
             user.BankCard.Balance += money;
@@ -87,14 +90,15 @@ public class BankService : IBankService
                 BankCardId = user.BankCard.Id,
                 BankCard = user.BankCard,
                 Action = $"Cash was credited to the card in the amount of {money}",
-                DateTime = DateTime.Now.Date
+                DateTime = DateTime.Now.Date,
+                Atm = atmDb,
             });
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
         }
     }
 
-    public async Task SendMoneyAsync(int userId, string receiverCardNumber, decimal money)
+    public async Task SendMoneyAsync(int userId, string receiverCardNumber, decimal money, int atmId)
     {
         var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
@@ -102,6 +106,7 @@ public class BankService : IBankService
         var receiver = await _context.Users.Include(i => i.BankCard).ThenInclude(i=>i.TransactionHistory)
             .Where(i => i.BankCard.CardNumber == receiverCardNumber)
             .FirstOrDefaultAsync();
+        var atmDb = await _context.ATMs.Where(i => i.Id == atmId).FirstOrDefaultAsync();
         if (user is not null && receiver is not null)
         {
             if(money > user.BankCard.Balance)
@@ -112,7 +117,8 @@ public class BankService : IBankService
                 BankCardId = user.BankCard.Id,
                 BankCard = user.BankCard,
                 Action = $"Money was sent to the {receiver.Name} {receiver.Surname} in the amount of {money}",
-                DateTime = DateTime.Now.Date
+                DateTime = DateTime.Now.Date,
+                Atm = atmDb,
             });
             _context.Users.Update(user);
             receiver.BankCard.Balance += money;

@@ -8,5 +8,7 @@ public class TransactionHistory
     
     public string? Action { get; set; }
 
+    public ATM? Atm { get; set; }
+    
     public DateTime DateTime { get; set; }
 }
