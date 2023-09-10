@@ -9,6 +9,8 @@ public class BankDBContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<TransactionHistory> TransactionHistory { get; set; }
     
+    public DbSet<ATM> ATMs { get; set; }
+    
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=BankDB;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True");
     

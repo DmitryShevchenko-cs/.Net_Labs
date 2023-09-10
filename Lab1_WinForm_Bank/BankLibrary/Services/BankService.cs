@@ -94,13 +94,13 @@ public class BankService : IBankService
         }
     }
 
-    public async Task SendMoneyAsync(int userId, int receiverId, decimal money)
+    public async Task SendMoneyAsync(int userId, string receiverCardNumber, decimal money)
     {
         var user = await _context.Users.Include(i => i.BankCard)
             .Where(i => i.Id == userId)
             .FirstOrDefaultAsync();
         var receiver = await _context.Users.Include(i => i.BankCard).ThenInclude(i=>i.TransactionHistory)
-            .Where(i => i.Id == receiverId)
+            .Where(i => i.BankCard.CardNumber == receiverCardNumber)
             .FirstOrDefaultAsync();
         if (user is not null && receiver is not null)
         {
