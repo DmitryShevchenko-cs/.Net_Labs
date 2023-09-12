@@ -73,21 +73,21 @@ public static class Bank
 
                         case "3":
                             Console.Clear();
-                            Console.WriteLine("Money");
+                            Console.WriteLine("Amount of money");
                             string money = Console.ReadLine();
                             await bankService.GetMoneyAsync(user!.Id, decimal.Parse(money!), atmNumber);
                             break;
 
                         case "4":
                             Console.Clear();
-                            Console.WriteLine("Money");
+                            Console.WriteLine("Amount of money");
                             money = Console.ReadLine();
                             await bankService.SetMoneyAsync(user!.Id, decimal.Parse(money!), atmNumber);
                             break;
 
                         case "5":
                             Console.Clear();
-                            Console.WriteLine("Money");
+                            Console.WriteLine("Amount of money");
                             money = Console.ReadLine();
                             Console.WriteLine("Receiver card number");
                             cardNumber = Console.ReadLine();
