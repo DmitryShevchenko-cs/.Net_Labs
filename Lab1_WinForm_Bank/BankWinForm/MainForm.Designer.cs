@@ -42,54 +42,60 @@
             button1.Location = new Point(24, 49);
             button1.Name = "button1";
             button1.Size = new Size(94, 59);
-            button1.TabIndex = 0;
+            button1.TabIndex = 1;
             button1.Text = "Show balance";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += ShowBalance_Click;
             // 
             // button2
             // 
             button2.Location = new Point(24, 127);
             button2.Name = "button2";
             button2.Size = new Size(94, 59);
-            button2.TabIndex = 0;
+            button2.TabIndex = 2;
             button2.Text = "Show history";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += ShowHistory_Click;
             // 
             // button3
             // 
             button3.Location = new Point(24, 206);
             button3.Name = "button3";
             button3.Size = new Size(94, 59);
-            button3.TabIndex = 0;
+            button3.TabIndex = 3;
             button3.Text = "Check nearest ATM";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += CheckATMs_Click;
             // 
             // button7
             // 
             button7.Location = new Point(556, 206);
             button7.Name = "button7";
             button7.Size = new Size(94, 59);
-            button7.TabIndex = 0;
+            button7.TabIndex = 6;
             button7.Text = "Send money";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += SendMoney_ClickAsync;
             // 
             // button4
             // 
             button4.Location = new Point(556, 127);
             button4.Name = "button4";
             button4.Size = new Size(94, 59);
-            button4.TabIndex = 0;
+            button4.TabIndex = 5;
             button4.Text = "Set money";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += SetMoney_Click;
             // 
             // button5
             // 
             button5.Location = new Point(556, 49);
             button5.Name = "button5";
             button5.Size = new Size(94, 59);
-            button5.TabIndex = 0;
+            button5.TabIndex = 4;
             button5.Text = "Get money";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += GetMoney_Click;
             // 
             // textBox1
             // 
@@ -97,6 +103,8 @@
             textBox1.Location = new Point(124, 49);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.ScrollBars = ScrollBars.Vertical;
             textBox1.Size = new Size(426, 216);
             textBox1.TabIndex = 1;
             // 
