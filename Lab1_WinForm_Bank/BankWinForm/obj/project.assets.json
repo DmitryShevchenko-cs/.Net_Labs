@@ -1133,6 +1133,21 @@
             "rid": "win"
           }
         }
+      },
+      "BankLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "BCrypt.Net-Next": "4.0.3",
+          "Microsoft.EntityFrameworkCore": "7.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "7.0.10"
+        },
+        "compile": {
+          "bin/placeholder/BankLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BankLibrary.dll": {}
+        }
       }
     }
   },
@@ -3459,11 +3474,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BankLibrary/1.0.0": {
+      "type": "project",
+      "path": "../BankLibrary/BankLibrary.csproj",
+      "msbuildProject": "../BankLibrary/BankLibrary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "BCrypt.Net-Next >= 4.0.3",
+      "BankLibrary >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.10"
@@ -3495,7 +3516,11 @@
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Dmitry\\Documents\\.Net_Labs\\Lab1_WinForm_Bank\\BankLibrary\\BankLibrary.csproj": {
+              "projectPath": "C:\\Users\\Dmitry\\Documents\\.Net_Labs\\Lab1_WinForm_Bank\\BankLibrary\\BankLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
