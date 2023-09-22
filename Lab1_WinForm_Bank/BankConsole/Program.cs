@@ -65,9 +65,40 @@ public static class Bank
 
                         case "2":
                             Console.Clear();
-                            var history =
-                                transactionHistoryService.ToString(
-                                    await bankService.CheckHistoryAsync(user!.Id, HistorySize.YEAR));
+                            Console.WriteLine("Filter");
+                            Console.WriteLine("1 - During the day");
+                            Console.WriteLine("2 - During the week");
+                            Console.WriteLine("3 - During the month");
+                            Console.WriteLine("4 - During the year");
+                            choice = Console.ReadLine();
+                            string? history = null;
+                            switch (choice)
+                            {
+                                case "1" :
+                                    history =
+                                        transactionHistoryService.ToString(
+                                            await bankService.CheckHistoryAsync(user!.Id, HistorySize.DAY));
+                                    break;
+                                case "2" :
+                                    history =
+                                        transactionHistoryService.ToString(
+                                            await bankService.CheckHistoryAsync(user!.Id, HistorySize.WEEK));
+                                    break;
+                                case "3" :
+                                    history =
+                                        transactionHistoryService.ToString(
+                                            await bankService.CheckHistoryAsync(user!.Id, HistorySize.MONTH));
+                                    break;
+                                case "4" :
+                                    history =
+                                        transactionHistoryService.ToString(
+                                            await bankService.CheckHistoryAsync(user!.Id, HistorySize.YEAR));
+                                    break;
+                                default :
+                                    Console.WriteLine("Incorrect choice. Please try again.");
+                                    break;
+                            }
+                            
                             Console.WriteLine($"Transaction history: \n{history}");
                             break;
 
