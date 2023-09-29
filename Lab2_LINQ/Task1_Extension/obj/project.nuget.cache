@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xAr7wQEEoxJhaDwsov/LenquTJtsbfN7Ur8jPDgRtiyvV2uSj6DB7/EzKDNZURuqTBO+PpKKmVdz8x699RAOsw==",
+  "dgSpecHash": "luQNlHWDDW94sgVXR5dewScCFJ0xwq+fThdPJoFkRp6YZ/AHy9bxcqzJMxiDMikth5MgVS6qe2aZCyrRGtsOvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dmitry\\Documents\\.Net_Labs\\Lab2_LINQ\\Task1_Extension\\Task1_Extension.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Dmitry\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Dmitry\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\Dmitry\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512"
+  ],
   "logs": []
 }

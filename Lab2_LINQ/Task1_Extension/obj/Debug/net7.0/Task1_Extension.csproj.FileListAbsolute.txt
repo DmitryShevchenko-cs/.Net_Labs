@@ -1,0 +1,17 @@
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\bin\Debug\net7.0\Task1_Extension.exe
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\bin\Debug\net7.0\Task1_Extension.deps.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\bin\Debug\net7.0\Task1_Extension.runtimeconfig.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\bin\Debug\net7.0\Task1_Extension.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\bin\Debug\net7.0\Task1_Extension.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\bin\Debug\net7.0\nunit.framework.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.csproj.AssemblyReference.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.AssemblyInfoInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.AssemblyInfo.cs
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.csproj.CopyComplete
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\refint\Task1_Extension.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\Task1_Extension.genruntimeconfig.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task1_Extension\obj\Debug\net7.0\ref\Task1_Extension.dll
