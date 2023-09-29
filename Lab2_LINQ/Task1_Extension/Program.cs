@@ -4,8 +4,7 @@
     {
         public static void Main()
         {
-            string str = "Some little test string";
-            Console.WriteLine(str.Reverse());
+
         }
 
         public static string Reverse(this string str)
