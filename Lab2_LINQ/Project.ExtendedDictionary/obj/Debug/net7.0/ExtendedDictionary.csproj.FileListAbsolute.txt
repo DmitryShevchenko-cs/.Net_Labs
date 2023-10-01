@@ -1,0 +1,12 @@
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\bin\Debug\net7.0\ExtendedDictionary.deps.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\bin\Debug\net7.0\ExtendedDictionary.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\bin\Debug\net7.0\ExtendedDictionary.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.csproj.AssemblyReference.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.AssemblyInfoInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.AssemblyInfo.cs
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\refint\ExtendedDictionary.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ExtendedDictionary.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\ExtendedDictionary\obj\Debug\net7.0\ref\ExtendedDictionary.dll

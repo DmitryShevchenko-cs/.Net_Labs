@@ -1,0 +1,12 @@
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\bin\Debug\net7.0\Project.Extensions.deps.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\bin\Debug\net7.0\Project.Extensions.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\bin\Debug\net7.0\Project.Extensions.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.csproj.AssemblyReference.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.AssemblyInfoInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.AssemblyInfo.cs
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\refint\Project.Extensions.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\Project.Extensions.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Project.Extensions\obj\Debug\net7.0\ref\Project.Extensions.dll

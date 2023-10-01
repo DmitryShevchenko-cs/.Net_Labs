@@ -1,0 +1,12 @@
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\bin\Debug\net7.0\Task2.ExtendedDictionary.deps.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\bin\Debug\net7.0\Task2.ExtendedDictionary.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\bin\Debug\net7.0\Task2.ExtendedDictionary.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.csproj.AssemblyReference.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.AssemblyInfoInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.AssemblyInfo.cs
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\refint\Task2.ExtendedDictionary.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\Task2.ExtendedDictionary.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_LINQ\Task2.ExtendedDictionary\obj\Debug\net7.0\ref\Task2.ExtendedDictionary.dll
