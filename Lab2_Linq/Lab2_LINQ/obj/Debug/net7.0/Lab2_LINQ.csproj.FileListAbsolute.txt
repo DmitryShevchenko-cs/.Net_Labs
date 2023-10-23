@@ -1,0 +1,14 @@
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\bin\Debug\net7.0\Lab2_LINQ.exe
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\bin\Debug\net7.0\Lab2_LINQ.deps.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\bin\Debug\net7.0\Lab2_LINQ.runtimeconfig.json
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\bin\Debug\net7.0\Lab2_LINQ.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\bin\Debug\net7.0\Lab2_LINQ.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.AssemblyInfoInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.AssemblyInfo.cs
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.csproj.CoreCompileInputs.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\refint\Lab2_LINQ.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.pdb
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\Lab2_LINQ.genruntimeconfig.cache
+C:\Users\Dmitry\Documents\.Net_Labs\Lab2_Linq\Lab2_LINQ\obj\Debug\net7.0\ref\Lab2_LINQ.dll
