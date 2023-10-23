@@ -1,9 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=22e87097_002D0ae4_002D4aa1_002D9441_002Db63a07654e29/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::6154873C-75B4-4189-939D-7E98273BC174::net7.0::Task1.Test.ExtensionsTest.CountElementOfSting_returnRightNumber&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::6154873C-75B4-4189-939D-7E98273BC174::net7.0::Task1.Test.ExtensionsTest.ReverseTest_StringReversed_OK&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::6154873C-75B4-4189-939D-7E98273BC174::net7.0::Task1.Test.ExtensionsTest.CountElementOfArray_returnRightNumber&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;NUnit3x::6154873C-75B4-4189-939D-7E98273BC174::net7.0::Task1.Test.ExtensionsTest.RemoveRepeatedElements_removedOk&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
