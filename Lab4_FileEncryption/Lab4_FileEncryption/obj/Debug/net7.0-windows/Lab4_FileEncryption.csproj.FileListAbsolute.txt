@@ -12,5 +12,5 @@ C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\
 C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\Debug\net7.0-windows\Lab4_FileEncryption.pdb
 C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\Debug\net7.0-windows\Lab4_FileEncryption.genruntimeconfig.cache
 C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\Debug\net7.0-windows\ref\Lab4_FileEncryption.dll
+C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\Debug\net7.0-windows\Lab4_FileEncryption.Form1.resources
 C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\Debug\net7.0-windows\Lab4_FileEncryption.csproj.GenerateResource.cache
-C:\Users\Dmitry\Documents\.Net_Labs\Lab4_FileEncryption\Lab4_FileEncryption\obj\Debug\net7.0-windows\Lab4_FileEncryption.Encryption.resources
