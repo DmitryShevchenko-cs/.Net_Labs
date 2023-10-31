@@ -1,7 +1,9 @@
-﻿namespace Lab4.BL;
+﻿using System.ComponentModel;
+
+namespace Lab4.BL;
 
 public interface IFileEncryption
 {
-    Task EncryptFile(string inputFilePath, string outputFilePath);
-    Task DecryptFile(string inputFilePath, string outputFilePath);
+    long EncryptFile(string inputFilePath, string outputFilePath, BackgroundWorker worker, DoWorkEventArgs e, ManualResetEvent pause, ThreadPriority threadPriority);
+    long DecryptFile(string inputFilePath, string outputFilePath, BackgroundWorker worker, DoWorkEventArgs e,  ManualResetEvent pause, ThreadPriority threadPriority);
 }
