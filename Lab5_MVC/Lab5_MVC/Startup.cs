@@ -1,4 +1,6 @@
 ﻿using Lab5_MVC.Models;
+using Lab5_MVC.Models.Repositories;
+using Lab5_MVC.Models.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace lab5_MVC;
@@ -21,22 +23,20 @@ public class Startup
         services.AddDbContext<Lab5DbContext>(options =>
             options.UseSqlServer(connectionString).EnableSensitiveDataLogging());
         
-        services.AddSignalR();
+        //services.AddScoped<IScheduleService, ScheduleService>();
+        services.AddTransient<IScheduleRepository, ScheduleRepository>();
         
-        // services.AddScoped<IScheduleService, ScheduleService>();
-        // services.AddScoped<IScheduleRepository, ScheduleRepository>();
-        //
-        // services.AddScoped<IAudienceService, AudienceService>();
-        // services.AddScoped<IAudienceRepository, AudienceRepository>();
-        //
-        // services.AddScoped<IGroupService, GroupService>();
-        // services.AddScoped<IGroupRepository, GroupRepository>();
-        //
-        // services.AddScoped<ILessonService, LessonService>();
-        // services.AddScoped<ILessonRepository, LessonRepository>();
-        //
-        // services.AddScoped<ITeacherService, TeacherService>();
-        // services.AddScoped<ITeacherRepository, TeacherRepository>();
+        //services.AddScoped<IAudienceService, AudienceService>();
+        services.AddTransient<IAudienceRepository, AudienceRepository>();
+        
+        //services.AddScoped<IGroupService, GroupService>();
+        services.AddTransient<IGroupRepository, GroupRepository>();
+        
+        //services.AddScoped<ILessonService, LessonService>();
+        services.AddTransient<ILessonRepository, LessonRepository>();
+        
+        //services.AddScoped<ITeacherService, TeacherService>();
+        services.AddTransient<ITeacherRepository, TeacherRepository>();
         
     }
 

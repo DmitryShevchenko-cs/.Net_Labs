@@ -72,7 +72,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
       <Folder Include="Models\Migrations\" />
       <Folder Include="Views\" />
     </ItemGroup>
