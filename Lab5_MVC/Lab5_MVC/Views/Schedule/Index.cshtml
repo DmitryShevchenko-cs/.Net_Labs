@@ -1,0 +1,96 @@
+﻿
+
+<head>
+<style>
+    /* Style the table header */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+    }
+
+    /* Style the table rows */
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    /* Style the table cells */
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    /* Style the "Delete" and "Edit" buttons */
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    /* Style the "Add Schedule" link */
+    .btn-add {
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+    }
+
+    .btn-add:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<h1>Schedule</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Lesson</th>
+        <th>Name</th>
+        <th>Week</th>
+        <th>Day</th>
+        <th>Audience</th>
+        <th>Group</th>
+        <th>Teacher</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var schedule in @Model)
+    {
+        <tr>
+            <td>@schedule.Id</td>
+            <td>@schedule.Lesson.ToString()</td>
+            <td>@schedule.Name</td>
+            <td>@schedule.Week</td>
+            <td>@schedule.Day</td>
+            <td>@schedule.Audience.ToString()</td>
+            <td>@schedule.Group.ToString()</td>
+            <td>@schedule.Teacher.ToString()</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new {id = schedule.Id})
+                @Html.ActionLink("Edit", "Edit", new {id = schedule.Id})
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a href="/schedule/create">Добавить группу</a>

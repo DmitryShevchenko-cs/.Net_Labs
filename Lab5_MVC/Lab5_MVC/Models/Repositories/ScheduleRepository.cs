@@ -20,7 +20,6 @@ public class ScheduleRepository : IScheduleRepository
             .Include(i => i.Group)
             .Include(i => i.Lesson)
             .Include(i => i.Teacher)
-            .AsNoTracking()
             .AsQueryable();
     }
 
@@ -31,7 +30,6 @@ public class ScheduleRepository : IScheduleRepository
             .Include(i => i.Group)
             .Include(i => i.Lesson)
             .Include(i => i.Teacher)
-            .AsNoTracking()
             .SingleOrDefaultAsync(i => i.Id == id, cancellationToken);
     }
 

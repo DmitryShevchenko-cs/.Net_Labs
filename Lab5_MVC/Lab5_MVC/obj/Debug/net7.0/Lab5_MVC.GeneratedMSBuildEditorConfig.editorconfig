@@ -15,3 +15,15 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\Dmitry\Documents\.Net_Labs\Lab5_MVC\Lab5_MVC
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Dmitry/Documents/.Net_Labs/Lab5_MVC/Lab5_MVC/Views/Schedule/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dmitry/Documents/.Net_Labs/Lab5_MVC/Lab5_MVC/Views/Schedule/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dmitry/Documents/.Net_Labs/Lab5_MVC/Lab5_MVC/Views/Schedule/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2NoZWR1bGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

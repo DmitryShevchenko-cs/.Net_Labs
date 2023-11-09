@@ -1,0 +1,124 @@
+﻿@using Lab5_MVC.Models.Entity
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+<style>
+     /* Style the table header */
+     table {
+         width: 100%;
+         border-collapse: collapse;
+     }
+ 
+     th {
+         background-color: #333;
+         color: #fff;
+         padding: 10px;
+         text-align: left;
+     }
+ 
+     /* Style the table rows */
+     tr:nth-child(even) {
+         background-color: #f2f2f2;
+     }
+ 
+     tr:nth-child(odd) {
+         background-color: #fff;
+     }
+ 
+     /* Style the table cells */
+     td {
+         padding: 8px;
+         text-align: left;
+     }
+ 
+     /* Style the "Delete" and "Edit" buttons */
+     .btn-danger {
+         background-color: #dc3545;
+         color: #fff;
+         border: none;
+         padding: 5px 10px;
+         cursor: pointer;
+     }
+ 
+     .btn-danger:hover {
+         background-color: #c82333;
+     }
+ 
+     /* Style the "Add Schedule" link */
+     .btn-add {
+         background-color: #007bff;
+         color: #fff;
+         text-decoration: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+     }
+ 
+     .btn-add:hover {
+         background-color: #0056b3;
+     }
+ </style>
+<h4>Schedule</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/schedule/saveedit" method="post">
+            <input type="hidden" name="Id" value="@Model.Id">
+            <input type="text" name="name" value="@Model.Name">
+            <select name="Week">
+                <option value="1" @(Model.Week == 1 ? "selected" : "")>1</option>
+                <option value="2" @(Model.Week == 2 ? "selected" : "")>2</option>
+            </select>
+
+            <select name="Day">
+                <option value="0" @(Model.Day == "Monday" ? "selected" : "")>Monday</option>
+                <option value="1" @(Model.Day == "Tuesday" ? "selected" : "")>Tuesday</option>
+                <option value="2" @(Model.Day == "Wednesday" ? "selected" : "")>Wednesday</option>
+                <option value="3" @(Model.Day == "Thursday" ? "selected" : "")>Thursday</option>
+                <option value="4" @(Model.Day == "Friday" ? "selected" : "")>Friday</option>
+                <option value="5" @(Model.Day == "Saturday" ? "selected" : "")>Saturday</option>
+                <option value="6" @(Model.Day == "Sunday" ? "selected" : "")>Sunday</option>
+            </select>
+            <select name="lessonId">
+                <option value="@Model.Lesson.Id">@Model.Lesson.ToString()</option>
+                @foreach (var lesson in (ViewData["Lessons"] as List<Lesson>)!)
+                {
+                    <option value="@lesson.Id">@lesson.ToString()</option>
+                }
+            </select>
+
+            <select name="groupId">
+                <option value="@Model.Group.Id">@Model.Group.ToString()</option>
+                @foreach (var group in (ViewData["Groups"] as List<Group>)!)
+                {
+                    <option value="@group.Id">@group.ToString()</option>
+                }
+            </select>
+
+            <select name="teacherId">
+                <option value="@Model.Teacher.Id">@Model.Teacher.ToString()</option>
+                @foreach (var teacher in (ViewData["Teachers"] as List<Teacher>)!)
+                {
+                    <option value="@teacher.Id">@teacher.ToString()</option>
+                }
+            </select>
+
+            <select name="audienceId">
+                <option value="@Model.Audience.Id">@Model.Audience.ToString()</option>
+                @foreach (var audience in (ViewData["Audiences"] as List<Audience>)!)
+                {
+                    <option value="@audience.Id">@audience.ToString()</option>
+                }
+            </select>
+
+            <input type="submit" value="Сохранить">
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

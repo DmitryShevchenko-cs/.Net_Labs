@@ -53,7 +53,7 @@ public class FileEncryption : IFileEncryption
                         totalBytesRead += bytesRead;
                         worker.ReportProgress(progress);
                         Console.WriteLine(progress);
-                        pause.WaitOne();
+                        pause.WaitOne(); 
                     }
                 }
 
