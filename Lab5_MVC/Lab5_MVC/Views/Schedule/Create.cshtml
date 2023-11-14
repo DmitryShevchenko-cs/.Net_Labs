@@ -1,0 +1,109 @@
+﻿@using Lab5_MVC.Models.Entity
+<head>
+ <style>
+     /* Style the table header */
+     table {
+         width: 100%;
+         border-collapse: collapse;
+     }
+ 
+     th {
+         background-color: #333;
+         color: #fff;
+         padding: 10px;
+         text-align: left;
+     }
+ 
+     /* Style the table rows */
+     tr:nth-child(even) {
+         background-color: #f2f2f2;
+     }
+ 
+     tr:nth-child(odd) {
+         background-color: #fff;
+     }
+ 
+     /* Style the table cells */
+     td {
+         padding: 8px;
+         text-align: left;
+     }
+ 
+     /* Style the "Delete" and "Edit" buttons */
+     .btn-danger {
+         background-color: #dc3545;
+         color: #fff;
+         border: none;
+         padding: 5px 10px;
+         cursor: pointer;
+     }
+ 
+     .btn-danger:hover {
+         background-color: #c82333;
+     }
+ 
+     /* Style the "Add Schedule" link */
+     .btn-add {
+         background-color: #007bff;
+         color: #fff;
+         text-decoration: none;
+         padding: 10px 20px;
+         border-radius: 5px;
+     }
+ 
+     .btn-add:hover {
+         background-color: #0056b3;
+     }
+ </style>
+
+</head>
+<form action="/schedule/save" method="post">
+    <input type="text" name="name" placeholder="Name">
+    <select name="Week">
+     <option value="1">1</option>
+     <option value="2">2</option>
+    </select>
+    <select name="Day">
+      <option value="0">Monday</option>
+      <option value="1">Tuesday</option>
+      <option value="2">Wednesday</option>
+      <option value="3">Thursday</option>
+      <option value="4">Friday</option>
+      <option value="5">Saturday</option>
+      <option value="6">Sunday</option>
+    </select>
+
+    <select name="lessonId">
+        <option value="">...</option>
+        @foreach (var lesson in (ViewData["Lessons"] as List<Lesson>)!)
+        {
+            <option value="@lesson.Id">@lesson.ToString()</option>
+        }
+    </select>
+
+    <select name="groupId">
+        <option value="">...</option>
+        @foreach (var group in (ViewData["Groups"] as List<Group>)!)
+        {
+            <option value="@group.Id">@group.ToString()</option>
+        }
+    </select>
+
+    <select name="teacherId">
+        <option value="">...</option>
+        @foreach (var teacher in (ViewData["Teachers"] as List<Teacher>)!)
+        {
+            <option value="@teacher.Id">@teacher.ToString()</option>
+        }
+    </select>
+
+    <select name="audienceId">
+        <option value="">...</option>
+        @foreach (var audience in (ViewData["Audiences"] as List<Audience>)!)
+        {
+            <option value="@audience.Id">@audience.ToString()</option>
+        }
+    </select>
+
+    <input type="submit" value="Сохранить">
+</form>
