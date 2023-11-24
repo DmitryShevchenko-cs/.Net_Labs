@@ -30,28 +30,16 @@ public class ScheduleController : Controller
     [HttpGet]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        //var schedule = await _scheduleService.GetAllAsync(cancellationToken);
-        var schedule = await _lab5DbContext.Schedules
-            .Include(i => i.Audience)
-            .Include(i => i.Group)
-            .Include(i => i.Lesson)
-            .Include(i => i.Teacher)
-            .ToListAsync(cancellationToken);
-        
+        var schedule = await _scheduleService.GetAllAsync(cancellationToken);
         return View(schedule);
     }
     
     public async Task<IActionResult> Create(CancellationToken cancellationToken)
     {
-        // var lessons = await _lessonService.GetAllAsync(cancellationToken);
-        // var groups = await _groupService.GetAllAsync(cancellationToken);
-        // var teachers = await _teacherService.GetAllAsync(cancellationToken);
-        // var audiences = await _audienceService.GetAllAsync(cancellationToken);
-
-        var lessons = await _lab5DbContext.Lessons.ToListAsync(cancellationToken);
-        var groups = await _lab5DbContext.Groups.ToListAsync(cancellationToken);
-        var teachers = await _lab5DbContext.Teachers.ToListAsync(cancellationToken);
-        var audiences = await _lab5DbContext.Audiences.ToListAsync(cancellationToken);
+        var lessons = await _lessonService.GetAllAsync(cancellationToken);
+        var groups = await _groupService.GetAllAsync(cancellationToken);
+        var teachers = await _teacherService.GetAllAsync(cancellationToken);
+        var audiences = await _audienceService.GetAllAsync(cancellationToken);
         
         ViewData["Lessons"] = lessons;
         ViewData["Groups"] = groups;
@@ -66,16 +54,11 @@ public class ScheduleController : Controller
         var groupIdInt = Convert.ToInt32(Request.Form["groupId"]);
         var teacherIdInt = Convert.ToInt32(Request.Form["teacherId"]);
         var audienceIdInt = Convert.ToInt32(Request.Form["audienceId"]);
-
-        var lesson = await _lab5DbContext.Lessons.FirstOrDefaultAsync(i => i.Id == lessonIdInt, cancellationToken);
-        var group = await _lab5DbContext.Groups.FirstOrDefaultAsync(i => i.Id == groupIdInt, cancellationToken);
-        var teacher = await _lab5DbContext.Teachers.FirstOrDefaultAsync(i => i.Id == teacherIdInt, cancellationToken);
-        var audience = await _lab5DbContext.Audiences.FirstOrDefaultAsync(i => i.Id == audienceIdInt, cancellationToken);
         
-        // var lesson = await _lessonService.GetByIdAsync(lessonIdInt, cancellationToken);
-        // var group = await _groupService.GetByIdAsync(groupIdInt, cancellationToken);
-        // var teacher = await _teacherService.GetByIdAsync(teacherIdInt, cancellationToken);
-        // var audience = await _audienceService.GetByIdAsync(audienceIdInt, cancellationToken);
+        var lesson = await _lessonService.GetByIdAsync(lessonIdInt, cancellationToken);
+        var group = await _groupService.GetByIdAsync(groupIdInt, cancellationToken);
+        var teacher = await _teacherService.GetByIdAsync(teacherIdInt, cancellationToken);
+        var audience = await _audienceService.GetByIdAsync(audienceIdInt, cancellationToken);
         
         Days day = (Days)Enum.Parse(typeof(Days), Request.Form["Day"].ToString());
 
@@ -86,10 +69,7 @@ public class ScheduleController : Controller
         schedule.Day = day.ToString(); 
         schedule.Week = int.Parse(Request.Form["Week"]); 
     
-        //await _scheduleService.AddToSchedule(schedule, cancellationToken);
-        await _lab5DbContext.Schedules.AddAsync(schedule, cancellationToken);
-        await _lab5DbContext.SaveChangesAsync(cancellationToken);
-        
+        await _scheduleService.AddToSchedule(schedule, cancellationToken);
         return RedirectToAction("Index");
     }
     
@@ -98,16 +78,11 @@ public class ScheduleController : Controller
     {
         var schedule = await _scheduleService.GetByIdAsync(id, cancellationToken);
 
-        // var lessons = await _lessonService.GetAllAsync(cancellationToken);
-        // var groups = await _groupService.GetAllAsync(cancellationToken);
-        // var teachers = await _teacherService.GetAllAsync(cancellationToken);
-        // var audiences = await _audienceService.GetAllAsync(cancellationToken);
+        var lessons = await _lessonService.GetAllAsync(cancellationToken);
+        var groups = await _groupService.GetAllAsync(cancellationToken);
+        var teachers = await _teacherService.GetAllAsync(cancellationToken);
+        var audiences = await _audienceService.GetAllAsync(cancellationToken);
         
-        var lessons = await _lab5DbContext.Lessons.ToListAsync(cancellationToken);
-        var groups = await _lab5DbContext.Groups.ToListAsync(cancellationToken);
-        var teachers = await _lab5DbContext.Teachers.ToListAsync(cancellationToken);
-        var audiences = await _lab5DbContext.Audiences.ToListAsync(cancellationToken);
-
         ViewData["Lessons"] = lessons;
         ViewData["Groups"] = groups;
         ViewData["Teachers"] = teachers;
@@ -123,15 +98,10 @@ public class ScheduleController : Controller
         var teacherIdInt = Convert.ToInt32(Request.Form["teacherId"]);
         var audienceIdInt = Convert.ToInt32(Request.Form["audienceId"]);
 
-        // var lesson = await _lessonService.GetByIdAsync(lessonIdInt, cancellationToken);
-        // var group = await _groupService.GetByIdAsync(groupIdInt, cancellationToken);
-        // var teacher = await _teacherService.GetByIdAsync(teacherIdInt, cancellationToken);
-        // var audience = await _audienceService.GetByIdAsync(audienceIdInt, cancellationToken);
-        
-        var lesson = await _lab5DbContext.Lessons.FirstOrDefaultAsync(i => i.Id == lessonIdInt, cancellationToken);
-        var group = await _lab5DbContext.Groups.FirstOrDefaultAsync(i => i.Id == groupIdInt, cancellationToken);
-        var teacher = await _lab5DbContext.Teachers.FirstOrDefaultAsync(i => i.Id == teacherIdInt, cancellationToken);
-        var audience = await _lab5DbContext.Audiences.FirstOrDefaultAsync(i => i.Id == audienceIdInt, cancellationToken);
+        var lesson = await _lessonService.GetByIdAsync(lessonIdInt, cancellationToken);
+        var group = await _groupService.GetByIdAsync(groupIdInt, cancellationToken);
+        var teacher = await _teacherService.GetByIdAsync(teacherIdInt, cancellationToken);
+        var audience = await _audienceService.GetByIdAsync(audienceIdInt, cancellationToken);
         
         Days day = (Days)Enum.Parse(typeof(Days), Request.Form["Day"].ToString());
         
@@ -142,19 +112,13 @@ public class ScheduleController : Controller
         schedule.Day = day.ToString();
         schedule.Week = int.Parse(Request.Form["Week"]);
 
-        //await _scheduleService.EditSchedule(schedule, cancellationToken);
-        _lab5DbContext.Schedules.Update(schedule);
-        await _lab5DbContext.SaveChangesAsync(cancellationToken);
+        await _scheduleService.EditSchedule(schedule, cancellationToken);
         
         return RedirectToAction("Index");
     }
     public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
     {
-        //await _scheduleService.DeleteById(id, cancellationToken);
-        var schedule = await _lab5DbContext.Schedules.FirstOrDefaultAsync(i => i.Id == id, cancellationToken);
-        _lab5DbContext.Schedules.Remove(schedule);
-        await _lab5DbContext.SaveChangesAsync(cancellationToken);
-        
+        await _scheduleService.DeleteById(id, cancellationToken);
         return RedirectToAction("Index");
     }
 }

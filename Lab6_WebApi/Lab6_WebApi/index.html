@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Rate Update</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<div id="exchangeRate"></div>
+
+<script>
+    function updateExchangeRate() {
+        $.ajax({
+            url: 'http://localhost:5003/api/Currency/exchange-rate',
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                $('#exchangeRate').html(`<p>1 USD = ${data.exchangeRate} UAH</p>`);
+            },
+            error: function(error) {
+                console.error('Error:', error);
+            }
+        });
+    }
+    setInterval(updateExchangeRate, 1000);
+   
+</script>
+</body>
+</html>
